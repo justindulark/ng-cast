@@ -1,15 +1,21 @@
 angular.module('video-player')
 .service('youTube', function($http) {
-  this.getSearch = function() {
+  this.getSearch = function(query, callback) {
     return $http({
       method: 'GET',
       url: 'https://www.googleapis.com/youtube/v3/search',
-      query: 'dogs',
-      type: 'video',
-      part: 'snippet',
-      maxResults: 5,
-      videoEmbeddable: true,
-      key: 'insert google youtube API key'
+      params: {
+        key: window.YOUTUBE_API_KEY,
+        q: query,
+        maxResults: 5,
+        part: 'snippet',
+        type: 'video',
+        videoEmbeddable: true
+      }
+    }).then( function(response) {
+      callback(response.data.items);
+    }, function() {
+      console.log('fudge');
     });
   };
 });
