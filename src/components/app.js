@@ -4,8 +4,8 @@ angular.module('video-player')
   // TODO
   templateUrl: 'src/templates/app.html',
   controller: function() {
-    this.selectVideo = () => {
-
+    this.selectVideo = (video) => {
+      this.currentVideo = video;
     };
     this.searchResults = () => {
 
