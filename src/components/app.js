@@ -10,7 +10,7 @@ angular.module('video-player')
     this.searchResults = () => {
 
     };
-    this.currentVideo = {};
     this.videos = window.exampleVideoData;
+    this.currentVideo = this.videos[0];
   }
 });
