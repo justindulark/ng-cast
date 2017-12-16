@@ -14,6 +14,7 @@ angular.module('video-player')
       }
     }).then( function(response) {
       callback(response.data.items);
+      return (response.data.items);
     }, function() {
       console.log('fudge');
     });

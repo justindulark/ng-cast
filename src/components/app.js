@@ -17,9 +17,11 @@ angular.module('video-player')
     this.submit = (query) => {
       youTube.getSearch(query, this.searchResults.bind(this));
     };
-    this.videos = window.exampleVideoData;
-    // this.videos = youtube.getSearch('aoa', this.searchResults.bind(this));
+    // this.videos = window.exampleVideoData;
+    this.videos = [];
+    this.submit('aoa');
     //youtube.getSearch('aoa', this.searchResults.bind(this));
+
     this.currentVideo = this.videos[0];
   }
 });
